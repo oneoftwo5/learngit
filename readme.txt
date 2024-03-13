@@ -17,3 +17,12 @@ git reset HEAD readme.txt:把暂存区的修改撤销掉，重新放回工作区
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。
 git rm readme.txt:删除一个文件
+
+连接远程仓库：
+git remote add origin https://github.com/oneoftwo5/learngit.git 关联远程库
+git remote add origin git@github.com:oneoftwo5/learngit.git 关联远程库2
+git branch -M main 将本地仓库改名（master不好）
+git push -u origin main 把本地库的所有内容推送到远程库上
+git clone git@github.com:oneoftwo5/gitskills.git 从远程库克隆
+之后可以简化成 git push origin main
+git remote rm <name> 如果添加的时候地址写错了，或者就是想删除远程库，可以用这个命令。使用前，建议先用git remote -v查看远程库信息：

@@ -27,6 +27,9 @@ git push -u origin main 把本地库的所有内容推送到远程库上
 git clone git@github.com:oneoftwo5/gitskills.git 从远程库克隆
 之后可以简化成 git push origin main
 git remote rm <name> 如果添加的时候地址写错了，或者就是想删除远程库，可以用这个命令。使用前，建议先用git remote -v查看远程库信息
-git checkout -b dev :创建新分支dev
+git checkout -b dev :创建并切换到新分支dev.也可以用git switch -c dev
 = git branch dev ; git checkout dev
+git checkout dev:切换到dev分支，也可以用git switch dev
 git branch:查看当前分支，前面有*号的就是现在所在分支
+git merge dev:命令用于合并指定分支到当前分支
+git branch -d dev: 删除dev分支

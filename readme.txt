@@ -34,3 +34,10 @@ git checkout dev:切换到dev分支，也可以用git switch dev
 git branch:查看当前分支，前面有*号的就是现在所在分支
 git merge dev:命令用于合并指定分支到当前分支
 git branch -d dev: 删除dev分支
+git stash:把当前工作现场“储藏”起来，等以后回复现场后继续工作
+git stash list:查看当前储存的工作现场
+git stash apply stash@{0}:恢复stash内容，然后用git stash drop删除stash内容
+git stash pop:恢复的同时把stash内容也删了
+修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场；
+在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动。
